@@ -5,7 +5,7 @@ import styles from './Game.css';
 export default function Square({ value, onClick }) {
   return (
     <button className={styles.square} onClick={onClick}>
-      {value}
+      <span className={styles.value}>{value}</span>
     </button>
   );
 }

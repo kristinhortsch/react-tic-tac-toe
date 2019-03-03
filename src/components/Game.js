@@ -72,18 +72,22 @@ export default class Game extends React.Component {
     if(winner) {
       status = 'Winner: ' + winner;
     } else {
-      status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+      status = 'Next Player: ' + (this.state.xIsNext ? 'X' : 'O');
     }
     return (
-      <div className={styles.game}>
-        <div className={styles.gameBoard}>
-          <Board onClick={(i) => this.handleClick(i)} squares={current.squares} />
+      <>
+        <div className={styles.game}>
+          <img src='http://powerhousestudio.ca/wp-content/uploads/2015/07/background-powerhousestudio.jpg'/>
+          <h1>TIC TAC TOE</h1>
+          <div className={styles.status}>{status}</div>
+          <div className={styles.gameBoard}>
+            <Board onClick={(i) => this.handleClick(i)} squares={current.squares} />
+          </div>
+          <div className={styles.gameInfo}>
+            <ol>{moves}</ol>
+          </div>
         </div>
-        <div className={styles.gameInfo}>
-          <div>{status}</div>
-          <ol>{moves}</ol>
-        </div>
-      </div>
+      </>
     );
   }
 }
